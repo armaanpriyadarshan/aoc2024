@@ -1,6 +1,6 @@
 with open('input.txt', 'r') as f:
     lines = f.readlines()
-    reports = [list(map(int, line.strip().split())) for line in lines]
+    reports = [[int(x) for x in line.strip().split()] for line in lines]
 
 def is_safe(level):
     return ((all(x < y for x, y in zip(level, level[1:])) or 
